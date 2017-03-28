@@ -1,0 +1,7 @@
+<h1>Users</h1>
+<!-- Aquí no se pone = después del % porque no quiero que se impirma algo,
+quiero que se recorra o haga algo. -->
+<% @users.each do |u| %>
+<!-- Aquí sí pongo el igual porque sí quiero que se imprima: -->
+<p><%= u.name%></p>
+<%end%>

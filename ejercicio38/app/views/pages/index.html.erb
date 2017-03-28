@@ -1,0 +1,23 @@
+<!-- <h1>Pages#index</h1>
+<p>Find me in app/views/pages/index.html.erb</p> -->
+
+<!-- <h1>Hola <%= @q %>!</h1> -->
+<p> <%= flash[:notice] %> </p>
+<h1 style= "color:<%= @q %>">Hola <%= @q %>!</h1>
+
+
+<h1> Formulario </h1>
+
+<%= params.as_json %>
+
+<!-- Si a este método no le pones POST, lo que hace es utilizar el método GET por default -->
+<!-- Luego le agregamos un action para que el formulario se envíe a mi página save_user -->
+<form action = "<%= pages_save_user_path %>" method="POST">
+
+  <%= hidden_field_tag :authenticity_token,
+  form_authenticity_token %>
+
+  <!-- Estos primeros  inputs por default son type text -->
+  <input name="q">
+  <input type="submit" value="Enviar">
+</form>
